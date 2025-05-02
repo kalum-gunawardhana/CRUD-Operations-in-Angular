@@ -1,0 +1,23 @@
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <a [routerLink]="'/add'" routerLinkActive="active-tab">ADD</a>
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <a [routerLink]="'/search'" routerLinkActive="active-tab">SEARCH</a>
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <a [routerLink]="'/update'" routerLinkActive="active-tab">UPDATE</a>
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <a [routerLink]="'/view'" routerLinkActive="active-tab">VIEW/DELETE</a>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>
+<router-outlet></router-outlet>
