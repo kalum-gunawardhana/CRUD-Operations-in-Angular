@@ -1,1 +1,39 @@
-<p>add-cus works!</p>
+<div class="form-container">
+    <h2>ADD CUSTOMER</h2>
+    <form (ngSubmit)="onSubmit()" #customerForm="ngForm">
+        <!-- Name Input -->
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" [(ngModel)]="customer.name" #name="ngModel"
+                required />
+            <div *ngIf="name.invalid && name.touched" class="error-message">
+                Name is required.
+            </div>
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" [(ngModel)]="customer.email"
+                #email="ngModel" required email />
+            <div *ngIf="email.invalid && email.touched" class="error-message">
+                A valid email is required.
+            </div>
+        </div>
+
+        <!-- Address Input -->
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" class="form-control" [(ngModel)]="customer.address" #address="ngModel"
+                required></textarea>
+            <div *ngIf="address.invalid && address.touched" class="error-message">
+                Address is required.
+            </div>
+        </div>
+
+        <!-- Add Button -->
+        <button type="submit" class="btn btn-primary" [disabled]="customerForm.invalid">
+            ADD
+        </button>
+    </form>
+</div>
