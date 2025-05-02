@@ -24,4 +24,13 @@ export class CustomerService {
   addCustomer(customer: Customer): Observable<Customer> {
     return this.http.post<Customer>(this.url, customer);
   }
+
+  // Fetch customer by name
+  getCustomerByName(name: string): Observable<Customer> {
+    return this.http.get<Customer>(`${this.url}/${name}`);
+  }
+
+  updateCustomer(id: number, customer: Customer): Observable<Customer> {
+    return this.http.put<Customer>(`${this.url}/${id}`, customer); // HTTP PUT request to update the customer
+  }
 }
