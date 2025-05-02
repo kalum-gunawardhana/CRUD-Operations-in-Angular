@@ -22,7 +22,7 @@ export class ViewCusComponent implements OnInit{
   loadCustomers(): void {
     this.customerService.getCustomers().subscribe((data: Customer[]) => {
       this.dataSource = data;
-      console.log(this.dataSource);
+      //console.log(this.dataSource);
     });
   }
 
